@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/*
+  ======================================================================
+  SmartGuard BD — Design System & Custom Properties
+  ======================================================================
+  How to customize colors/fonts:
+  Modify the CSS variables below in :root to adapt brand styling.
+*/
+
+:root {
+  --color-primary: #0F766E;
+  --color-primary-hover: #115E59;
+  --color-navy: #0B2530;
+  --color-mint: #F0FDFA;
+  --color-neutral-bg: #F8FAFC;
+  --color-white: #FFFFFF;
+  --color-body: #334155;
+  --color-muted: #64748B;
+  --color-accent: #B91C1C;
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-border: #E2E8F0;
+
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-bangla: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-body);
+  background-color: var(--color-white);
+  line-height: 1.7;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-bangla {
+  font-family: var(--font-bangla);
+  line-height: 1.85 !important;
+}
+
+/* Responsive Type Scale */
+.display-h1 {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: var(--color-navy);
+}
+
+@media (min-width: 768px) {
+  .display-h1 {
+    font-size: 60px;
+  }
+}
+
+.display-h2 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+@media (min-width: 768px) {
+  .display-h2 {
+    font-size: 40px;
+  }
+}
+
+.display-h3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+@media (min-width: 768px) {
+  .display-h3 {
+    font-size: 24px;
+  }
+}
+
+.eyebrow-label {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Base Card Style */
+.card-base {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(15, 118, 110, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-base:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08), 0 12px 28px rgba(15, 118, 110, 0.10);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulseRadar {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-radar {
+  animation: pulseRadar 2.2s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

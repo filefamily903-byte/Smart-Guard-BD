@@ -1,0 +1,8 @@
+{
+  "name": "SmartGuard BD",
+  "description": "AI-driven child immunization tracking and cold-chain ecosystem concept for Bangladesh with wearable NFC Kala Dhaga pendants and offline sync.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
